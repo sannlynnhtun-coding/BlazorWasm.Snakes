@@ -1,6 +1,6 @@
 {
-  "name": "BlazorWasm.Snakes",
-  "short_name": "BlazorWasm.Snakes",
+  "name": "Blazor WASM - Snakes",
+  "short_name": "Blazor WASM - Snakes",
   "id": "./",
   "start_url": "./",
   "display": "standalone",
@@ -9,12 +9,12 @@
   "prefer_related_applications": false,
   "icons": [
     {
-      "src": "icon-512.png",
+      "src": "snake_logo.png",
       "type": "image/png",
       "sizes": "512x512"
     },
     {
-      "src": "icon-192.png",
+      "src": "snake_logo.png",
       "type": "image/png",
       "sizes": "192x192"
     }

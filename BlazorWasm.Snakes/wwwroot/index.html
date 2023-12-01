@@ -4,15 +4,28 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BlazorWasm.Snakes</title>
+
+    <title>Snakes</title>
     <base href="/" />
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+
+
+
+    <!--<link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />-->
     <link rel="stylesheet" href="css/app.css" />
-    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="icon" type="image/png" href="snake_logo.png" />
     <link href="BlazorWasm.Snakes.styles.css" rel="stylesheet" />
+
+    <link type="text/css" rel="stylesheet" href="theme/css/plugins.css">
+    <link type="text/css" rel="stylesheet" href="theme/css/style.css">
+
+    <link href="app.css" rel="stylesheet" />
+
+    <!--<link rel="shortcut icon" href="theme/images/favicon.ico">-->
+
+
     <link href="manifest.webmanifest" rel="manifest" />
-    <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png" />
-    <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="snake_logo.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="snake_logo.png" />
 </head>
 
 <body>
@@ -31,6 +44,30 @@
     </div>
     <script src="_framework/blazor.webassembly.js"></script>
     <script>navigator.serviceWorker.register('service-worker.js');</script>
+    <script src="theme/js/jquery.min.js"></script>
+    <script src="theme/js/plugins.js"></script>
+    <script>
+        window.loadJs = function (sourceUrl) {
+            if (sourceUrl.Length == 0) {
+                console.error("Invalid source URL");
+                return;
+            }
+
+            var tag = document.createElement('script');
+            tag.src = sourceUrl;
+            tag.type = "text/javascript";
+
+            tag.onload = function () {
+                console.log("Script loaded successfully");
+            }
+
+            tag.onerror = function () {
+                console.error("Failed to load script");
+            }
+
+            document.body.appendChild(tag);
+        }
+    </script>
 </body>
 
 </html>

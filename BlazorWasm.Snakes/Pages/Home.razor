@@ -1,7 +1,102 @@
 ﻿@page "/"
+@inject IJSRuntime JsRuntime
 
-<PageTitle>Home</PageTitle>
-
-<h1>Hello, world!</h1>
-
-Welcome to your new app.
+<!-- wrapper -->
+<div id="wrapper">
+    <!-- content-holder -->
+    <div class="content-holder">
+        <!-- hero-carousel-wrapper -->
+        <div class="hero-carousel-wrapper hfs_wrap">
+            <div class="fs-slider fw-carousel2 lightgallery fw-carousel_hight full-height fs-anim-t" data-mousecontrol2="true">
+                <div class="swiper-container  ">
+                    <div class="swiper-wrapper">
+                        <!-- swiper-slide-->
+                        <div class="swiper-slide hov_zoom">
+                            <div class="anim-fw">
+                                <img src="theme/images/folio/3.jpg" alt="">
+                                <a href="theme/images/folio/3.jpg" class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
+                                <div class="overlay"></div>
+                                <div class="thumb-info_main">
+                                    <h3><a href="portfolio-single.html">Sunny side up</a></h3>
+                                    <p>Here you can place an optional description of your  Project</p>
+                                    <a href="portfolio-single.html" class=" fs-slider-item_btn">View Case</a>
+                                </div>
+                                <div class="sc_num">01</div>
+                            </div>
+                        </div>
+                        <!-- swiper-slide end-->
+                        <!-- swiper-slide-->
+                        <div class="swiper-slide hov_zoom">
+                            <div class="anim-fw">
+                                <img src="theme/images/folio/9.jpg" alt="">
+                                <a href="theme/images/folio/9.jpg" class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
+                                <div class="overlay"></div>
+                                <div class="thumb-info_main">
+                                    <h3><a href="portfolio-single.html">A Wonderful Life</a></h3>
+                                    <p>Here you can place an optional description of your  Project</p>
+                                    <a href="portfolio-single.html" class="fs-slider-item_btn">View Case</a>
+                                </div>
+                                <div class="sc_num">02</div>
+                            </div>
+                        </div>
+                        <!-- swiper-slide end-->
+                        <!-- swiper-slide-->
+                        <div class="swiper-slide hov_zoom">
+                            <div class="anim-fw">
+                                <img src="theme/images/folio/4.jpg" alt="">
+                                <a href="theme/images/folio/4.jpg" class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
+                                <div class="overlay"></div>
+                                <div class="thumb-info_main">
+                                    <h3><a href="portfolio-single.html">The Other Side of Me</a></h3>
+                                    <p>Praesent nec leo venenatis elit semper aliquet id ac enim. Maecenas nec mi leo. </p>
+                                    <a href="portfolio-single.html" class="fs-slider-item_btn">View Case</a>
+                                </div>
+                                <div class="sc_num">03</div>
+                            </div>
+                        </div>
+                        <!-- swiper-slide end-->
+                        <!-- swiper-slide-->
+                        <div class="swiper-slide hov_zoom">
+                            <div class="anim-fw">
+                                <img src="theme/images/folio/5.jpg" alt="">
+                                <a href="theme/images/folio/5.jpg" class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
+                                <div class="overlay"></div>
+                                <div class="thumb-info_main">
+                                    <h3><a href="portfolio-single.html">Alone on the Nature</a></h3>
+                                    <p>Here you can place an optional description of your  Project</p>
+                                    <a href="portfolio-single.html" class="fs-slider-item_btn">View Case</a>
+                                </div>
+                                <div class="sc_num">04</div>
+                            </div>
+                        </div>
+                        <!-- swiper-slide end-->
+                    </div>
+                </div>
+            </div>
+            <div class="ccsw   fwc_btn fwc_btn2 fwc_btn_prev ccsw-prev">
+                <i class="fal fa-angle-left"></i>
+            </div>
+            <div class="ccsw   fwc_btn fwc_btn2 fwc_btn_next ccsw-next">
+                <i class="fal fa-angle-right"></i>
+            </div>
+        </div>
+        <!-- fixed-bottom-container -->
+        <div class="fixed-bottom-container hid-mob">
+            <div class="scroll-down-wrap">
+                <div class="mousey">
+                    <div class="scroller"></div>
+                </div>
+            </div>
+            <div class="hero-slider-wrap_pagination-wrap">
+                <div class="hero-slider-wrap_pagination hero-slider-pag"></div>
+            </div>
+            <div class="fw-carousel_number_wrap">
+                <div class="fw-carousel_contr_counter current">01</div>
+                <div class="fw-carousel_contr_counter total"></div>
+            </div>
+        </div>
+        <!-- fixed-bottom-container end -->
+    </div>
+    <!-- content-holder end -->
+</div>
+<!-- wrapper end -->

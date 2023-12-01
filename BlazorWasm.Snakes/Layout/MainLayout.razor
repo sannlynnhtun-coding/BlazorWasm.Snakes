@@ -1,16 +1,208 @@
 ﻿@inherits LayoutComponentBase
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
+
+<!--loader-->
+<div class="main-loader">
+    <div class="ml-wrap">
+        <div class="ml-mask"></div>
+        <img src="theme/images/logo.png" alt="">
     </div>
-
-    <main>
-        <div class="top-row px-4">
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
+    <div class="ml_images-wrap">
+        <div class="ml_bg-item" style="top:-30px; left: 0">
+            <div class="bg" data-bg="theme/images/folio/2.jpg"></div>
         </div>
-
-        <article class="content px-4">
-            @Body
-        </article>
-    </main>
+        <div class="ml_bg-item" style="bottom:  -20px; left: 50px">
+            <div class="bg" data-bg="theme/images/folio/6.jpg"></div>
+        </div>
+        <div class="ml_bg-item" style="top:30px; right: -120px">
+            <div class="bg" data-bg="theme/images/folio/18.jpg"></div>
+        </div>
+    </div>
 </div>
+<!--loader end-->
+<!--  main start  -->
+<div id="main">
+    <!--  header main-header  -->
+    <header class="main-header">
+        <div class="main-inner">
+            <!--logo-->
+            <a href="index.html" class="logo-holder"><img src="theme/images/logo.png" alt=""></a>
+            <!--logo end-->
+            <!-- sb-button-->
+            <div class="sb-button c_sb"><span></span></div>
+            <!-- sb-button end-->
+            <!-- mobile nav -->
+            <div class="nav-button-wrap">
+                <div class="nav-button"><span></span><span></span><span></span></div>
+            </div>
+            <!-- mobile nav end-->
+            <!-- share btn-->
+            <div class="share-btn isShare show-share"> <span>Share  <i class="fal fa-chevron-up"></i></span></div>
+            <!-- share btn end-->
+            <!--  navigation -->
+            <div class="nav-holder main-menu">
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="#" class="act-link">Home </a>
+                            <!--second level -->
+                            <ul>
+                                <li><a href="index.html">Carousel</a></li>
+                                <li><a href="index2.html">Slider  </a></li>
+                                <li><a href="index3.html">Images Grid</a></li>
+                                <li><a href="index4.html">Carousel 2</a></li>
+                                <li><a href="index5.html">Video</a></li>
+                            </ul>
+                            <!--second level end-->
+                        </li>
+                        <li>
+                            <a href="#">Portfolio </a>
+                            <!--second level -->
+                            <ul>
+                                <li><a href="portfolio.html">Horizontal Grid </a></li>
+                                <li><a href="portfolio2.html">Vertical Grid</a></li>
+                                <li><a href="portfolio3.html">Column Grid</a></li>
+                                <li>
+                                    <a href="#">Single </a>
+                                    <!--third  level -->
+                                    <ul>
+                                        <li><a href="portfolio-single.html">Style 1</a></li>
+                                        <li><a href="portfolio-single2.html">Style 2</a></li>
+                                        <li><a href="portfolio-single3.html">Style 3</a></li>
+                                        <li><a href="portfolio-single4.html">Style 4</a></li>
+                                    </ul>
+                                    <!--third level end-->
+                                </li>
+                            </ul>
+                            <!--second level end-->
+                        </li>
+                        <li>
+                            <a href="about.html">About</a>
+                        </li>
+                        <li>
+                            <a href="blog.html">News</a>
+                        </li>
+                        <li>
+                            <a href="contacts.html">Contacts</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- navigation  end -->
+            <!-- share-wrapper-->
+            <div class="share-wrapper">
+                <div class="share-inner">
+                    <div class="share-container"></div>
+                </div>
+            </div>
+            <!-- share-wrapper end -->
+        </div>
+    </header>
+    <!-- Header   end-->
+    @Body
+    <!-- aside-column -->
+    <div class="aside-column">
+        <!-- social_links-->
+        <div class="header_social">
+            <ul>
+                <li><a href="#" target="_blank">Fb</a></li>
+                <li><a href="#" target="_blank">Ins</a></li>
+                <li><a href="#" target="_blank">Tw</a></li>
+                <li><a href="#" target="_blank">Tic</a></li>
+            </ul>
+        </div>
+        <!-- social_links end-->
+    </div>
+    <!-- aside-column  end -->
+    <!-- footer -->
+    <footer class="main-footer">
+        <div class="footer_contacts">
+            <ul>
+                <li><span>Mail :</span><a href="#" target="_blank">yourmail@domain.com</a></li>
+                <li><span>Phone :</span><a href="#">+3(111)123456789</a></li>
+            </ul>
+        </div>
+        <div class="policy-box">
+            Photogam 2023 . All rights reserved.
+        </div>
+    </footer>
+    <!-- footer end-->
+    <!-- sidebar-->
+    <div class="sidebar-wrap">
+        <div class="sidebar-wrap-container">
+            <!-- sb-widget-wrap-->
+            <div class="sb-widget-wrap fl-wrap">
+                <h3>Latest Works</h3>
+                <div class="sb-widget  fl-wrap">
+                    <div class="categories_widget-wrap">
+                        <!-- categories_widget_item-->
+                        <a class="categories_widget_item" href="portfolio-single.html">
+                            <div class="categories_widget_item_img">
+                                <img src="theme/images/folio/14.jpg" class="respimg" alt="">
+                            </div>
+                            <span class="categories_widget_title">Crazy, Cute Couple</span>
+                        </a>
+                        <!-- categories_widget_item end-->
+                        <!-- categories_widget_item-->
+                        <a class="categories_widget_item" href="portfolio-single.html">
+                            <div class="categories_widget_item_img">
+                                <img src="theme/images/folio/15.jpg" class="respimg" alt="">
+                            </div>
+                            <span class="categories_widget_title">Alone on Nature</span>
+                        </a>
+                        <!-- categories_widget_item end-->
+                        <!-- categories_widget_item-->
+                        <a class="categories_widget_item" href="portfolio-single.html">
+                            <div class="categories_widget_item_img">
+                                <img src="theme/images/folio/16.jpg" class="respimg" alt="">
+                            </div>
+                            <span class="categories_widget_title">Living in my dream</span>
+                        </a>
+                        <!-- categories_widget_item end-->
+                        <!-- categories_widget_item-->
+                        <a class="categories_widget_item" href="portfolio-single.html">
+                            <div class="categories_widget_item_img">
+                                <img src="theme/images/folio/17.jpg" class="respimg" alt="">
+                            </div>
+                            <span class="categories_widget_title">Sunny Side Up</span>
+                        </a>
+                        <!-- categories_widget_item end-->
+                    </div>
+                </div>
+            </div>
+            <!-- sb-widget-wrap end-->
+            <!-- sb-widget-wrap-->
+            <div class="sb-widget-wrap fl-wrap">
+                <h3>Subscribe To  Newsletter</h3>
+                <div class="sb-widget  fl-wrap">
+                    <p>Lorem ipsum dosectetur adipisicing elit, sed do.Lorem ipsum dolor sit amet,  </p>
+                    <div class="subcribe-form fl-wrap">
+                        <form id="subscribe">
+                            <input class="enteremail" name="email" id="subscribe-email" placeholder="Your Email" spellcheck="false" type="text">
+                            <button type="submit" id="subscribe-button" class="subscribe-button">Submit</button>
+                            <label for="subscribe-email" class="subscribe-message"></label>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- sb-widget-wrap end-->
+            <!-- sb-widget-wrap-->
+            <div class="sb-widget-wrap fl-wrap">
+                <h3>Social Links</h3>
+                <div class="sb-widget    fl-wrap">
+                    <div class="sidebar-social fl-wrap">
+                        <ul>
+                            <li><a href="#" target="_blank">Fb</a></li>
+                            <li><a href="#" target="_blank">Tw</a></li>
+                            <li><a href="#" target="_blank">Ins</a></li>
+                            <li><a href="#" target="_blank">Tic</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- sb-widget-wrap end-->
+        </div>
+    </div>
+    <div class="sb-overlay"></div>
+    <!-- sidebar end-->
+</div>
+<!-- Main end -->
