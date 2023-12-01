@@ -1,102 +1,271 @@
 ﻿@page "/"
+@using BlazorWasm.Snakes.Models
 @inject IJSRuntime JsRuntime
+@inject SnakeService _snakeService
 
-<!-- wrapper -->
-<div id="wrapper">
-    <!-- content-holder -->
-    <div class="content-holder">
-        <!-- hero-carousel-wrapper -->
-        <div class="hero-carousel-wrapper hfs_wrap">
-            <div class="fs-slider fw-carousel2 lightgallery fw-carousel_hight full-height fs-anim-t" data-mousecontrol2="true">
-                <div class="swiper-container  ">
-                    <div class="swiper-wrapper">
-                        <!-- swiper-slide-->
-                        <div class="swiper-slide hov_zoom">
-                            <div class="anim-fw">
-                                <img src="theme/images/folio/3.jpg" alt="">
-                                <a href="theme/images/folio/3.jpg" class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
-                                <div class="overlay"></div>
-                                <div class="thumb-info_main">
-                                    <h3><a href="portfolio-single.html">Sunny side up</a></h3>
-                                    <p>Here you can place an optional description of your  Project</p>
-                                    <a href="portfolio-single.html" class=" fs-slider-item_btn">View Case</a>
+
+@if (_enumSnakeDetail == EnumSnakeDetail.Disable)
+{
+    <!-- wrapper -->
+    <div id="wrapper">
+        <!-- content-holder -->
+        <div class="content-holder">
+            <!-- horizontal-grid-wrap -->
+            <div class="horizontal-grid-wrap scale_anim">
+                <div class="horizontal-portfolio_wrap two-ver-columns lightgallery gi_left_al" id="portfolio_horizontal_container">
+                    <!-- portfolio start -->
+                    @if (_snakes is not null)
+                    {
+                        bool isFinish = false;
+                        int totalCount = _snakes.Count;
+                        int picCount = 0;
+                        @for (int i = 0; i < totalCount; i++)
+                        {
+                            List<SnakeModel> lstSnakes = new List<SnakeModel>();
+                            SnakeModel item1 = new SnakeModel();
+                            SnakeModel item2 = new SnakeModel();
+                            SnakeModel item3 = new SnakeModel();
+                            SnakeModel item4 = new SnakeModel();
+                            SnakeModel item5 = new SnakeModel();
+                            item1 = _snakes[i];
+
+                            int count = 0;
+
+
+                            lstSnakes.Add(item1);
+                            if (i + 1 < totalCount)
+                            {
+                                item2 = _snakes[i + 1];
+                                lstSnakes.Add(item2);
+                                count++;
+                            }
+                            else
+                            {
+                                isFinish = true;
+                            }
+                            if (i + 2 < totalCount)
+                            {
+                                item3 = _snakes[i + 2];
+                                lstSnakes.Add(item3);
+                                count++;
+                            }
+                            else
+                            {
+                                isFinish = true;
+                            }
+                            if (i + 3 < totalCount)
+                            {
+                                item4 = _snakes[i + 3];
+                                lstSnakes.Add(item4);
+                                count++;
+                            }
+                            else
+                            {
+                                isFinish = true;
+                            }
+                            if (i + 4 < totalCount)
+                            {
+                                item5 = _snakes[i + 4];
+                                lstSnakes.Add(item5);
+                                count++;
+                            }
+                            else
+                            {
+                                isFinish = true;
+                            }
+
+                            i += count;
+
+                            <!-- gallery-item-->
+                            <div class="gallery-item nature">
+                                <div class="grid-item-holder  hov_zoom">
+                                    <img src="Snakes/@(++picCount).jpg" alt="">
+                                    <div class="grid-item-info">
+                                        <h3><a href="portfolio-single.html">@item1.MMName</a></h3>
+                                        <p>@item1.EngName</p>
+                                    </div>
+                                    <div class="pr_num"></div>
+                                    <a class=" grid-media-zoom" href="javascript:void(0);" @onclick="()=>Onclick(item1)">
+                                        <i class=" far fa-search"></i>
+                                    </a>
                                 </div>
-                                <div class="sc_num">01</div>
                             </div>
-                        </div>
-                        <!-- swiper-slide end-->
-                        <!-- swiper-slide-->
-                        <div class="swiper-slide hov_zoom">
-                            <div class="anim-fw">
-                                <img src="theme/images/folio/9.jpg" alt="">
-                                <a href="theme/images/folio/9.jpg" class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
-                                <div class="overlay"></div>
-                                <div class="thumb-info_main">
-                                    <h3><a href="portfolio-single.html">A Wonderful Life</a></h3>
-                                    <p>Here you can place an optional description of your  Project</p>
-                                    <a href="portfolio-single.html" class="fs-slider-item_btn">View Case</a>
+                            <!-- gallery-item end-->
+                            <!-- gallery-item-->
+                            <div class="gallery-item models couples">
+                                <div class="grid-item-holder  hov_zoom">
+                                    <img src="Snakes/@(++picCount).jpg" alt="">
+                                    <div class="grid-item-info">
+                                        <h3><a href="portfolio-single.html">@item2.MMName</a></h3>
+                                        <p>@item2.EngName</p>
+                                    </div>
+                                    <div class="pr_num"></div>
+                                    <a class=" grid-media-zoom" href="javascript:void(0);" @onclick="()=>Onclick(item2)">
+                                        <i class=" far fa-search"></i>
+                                    </a>
                                 </div>
-                                <div class="sc_num">02</div>
                             </div>
-                        </div>
-                        <!-- swiper-slide end-->
-                        <!-- swiper-slide-->
-                        <div class="swiper-slide hov_zoom">
-                            <div class="anim-fw">
-                                <img src="theme/images/folio/4.jpg" alt="">
-                                <a href="theme/images/folio/4.jpg" class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
-                                <div class="overlay"></div>
-                                <div class="thumb-info_main">
-                                    <h3><a href="portfolio-single.html">The Other Side of Me</a></h3>
-                                    <p>Praesent nec leo venenatis elit semper aliquet id ac enim. Maecenas nec mi leo. </p>
-                                    <a href="portfolio-single.html" class="fs-slider-item_btn">View Case</a>
+                            <!-- gallery-item end-->
+                            <!-- gallery-item-->
+                            <div class="gallery-item portfolio_item_second models">
+                                <div class="grid-item-holder  hov_zoom">
+                                    <img src="Snakes/@(++picCount).jpg" alt="">
+                                    <div class="grid-item-info">
+                                        <h3><a href="portfolio-single.html">@item3.MMName</a></h3>
+                                        <p>@item3.EngName</p>
+                                    </div>
+                                    <div class="pr_num"></div>
+                                    <a class=" grid-media-zoom" href="javascript:void(0);" @onclick="()=>Onclick(item3)">
+                                        <i class=" far fa-search"></i>
+                                    </a>
                                 </div>
-                                <div class="sc_num">03</div>
                             </div>
-                        </div>
-                        <!-- swiper-slide end-->
-                        <!-- swiper-slide-->
-                        <div class="swiper-slide hov_zoom">
-                            <div class="anim-fw">
-                                <img src="theme/images/folio/5.jpg" alt="">
-                                <a href="theme/images/folio/5.jpg" class="box-media-zoom   popup-image"><i class="fal fa-search"></i></a>
-                                <div class="overlay"></div>
-                                <div class="thumb-info_main">
-                                    <h3><a href="portfolio-single.html">Alone on the Nature</a></h3>
-                                    <p>Here you can place an optional description of your  Project</p>
-                                    <a href="portfolio-single.html" class="fs-slider-item_btn">View Case</a>
+                            <!-- gallery-item end-->
+                            <!-- gallery-item-->
+                            <div class="gallery-item nature">
+                                <div class="grid-item-holder  hov_zoom">
+                                    <img src="Snakes/@(++picCount).jpg" alt="">
+                                    <div class="grid-item-info">
+                                        <h3><a href="portfolio-single.html">@item4.MMName</a></h3>
+                                        <p>@item4.EngName</p>
+                                    </div>
+                                    <div class="pr_num"></div>
+                                    <a class=" grid-media-zoom" href="javascript:void(0);" @onclick="()=>Onclick(item4)">
+                                        <i class=" far fa-search"></i>
+                                    </a>
                                 </div>
-                                <div class="sc_num">04</div>
                             </div>
-                        </div>
-                        <!-- swiper-slide end-->
+                            <!-- gallery-item end-->
+                            <!-- gallery-item-->
+                            <div class="gallery-item couples">
+                                <div class="grid-item-holder  hov_zoom">
+                                    <img src="Snakes/@(++picCount).jpg" alt="">
+                                    <div class="grid-item-info">
+                                        <h3><a href="portfolio-single.html">@item5.MMName</a></h3>
+                                        <p>@item5.EngName</p>
+                                    </div>
+                                    <div class="pr_num"></div>
+                                    <a class=" grid-media-zoom" href="javascript:void(0);" @onclick="()=>Onclick(item5)">
+                                        <i class=" far fa-search"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- gallery-item end-->
+                        }
+                    }
+
+                    <!-- portfolio end -->
+                </div>
+            </div>
+            <!-- portfolio end -->
+            <!-- fixed-bottom-container -->
+            <div class="fixed-bottom-container f_bc_vis">
+                <div class="scroll-down-wrap">
+                    <div class="mousey">
+                        <div class="scroller"></div>
                     </div>
                 </div>
-            </div>
-            <div class="ccsw   fwc_btn fwc_btn2 fwc_btn_prev ccsw-prev">
-                <i class="fal fa-angle-left"></i>
-            </div>
-            <div class="ccsw   fwc_btn fwc_btn2 fwc_btn_next ccsw-next">
-                <i class="fal fa-angle-right"></i>
-            </div>
-        </div>
-        <!-- fixed-bottom-container -->
-        <div class="fixed-bottom-container hid-mob">
-            <div class="scroll-down-wrap">
-                <div class="mousey">
-                    <div class="scroller"></div>
+                <div class="filter-btn hid-filter">
+                    <div class="filter-btn_container"></div>
+                    <span class="filt-title">Filters</span>
+                </div>
+                <div class="folio-counter">
+                    <div class="num-album"></div>
+                    <div class=" all-album"></div>
                 </div>
             </div>
-            <div class="hero-slider-wrap_pagination-wrap">
-                <div class="hero-slider-wrap_pagination hero-slider-pag"></div>
+            <!-- fixed-bottom-container  end-->
+            <!-- gallery-filters-wrap-->
+            <div class="gallery-filters-wrap">
+                <div class="gallery-filters">
+                    <a href="#" class="gallery-filter  gallery-filter-active" data-filter="*">All Cases</a>
+                    <a href="#" class="gallery-filter" data-filter=".nature"> Nature</a>
+                    <a href="#" class="gallery-filter" data-filter=".models">Models</a>
+                    <a href="#" class="gallery-filter" data-filter=".couples"> Couples</a>
+                    <a href="#" class="gallery-filter" data-filter=".outdoor"> Outdoor</a>
+                </div>
+                <div class="gallery-filters-overlay"></div>
             </div>
-            <div class="fw-carousel_number_wrap">
-                <div class="fw-carousel_contr_counter current">01</div>
-                <div class="fw-carousel_contr_counter total"></div>
-            </div>
+            <!--gallery-filters-wrap end-->
         </div>
-        <!-- fixed-bottom-container end -->
+        <!-- content-holder end -->
     </div>
-    <!-- content-holder end -->
-</div>
-<!-- wrapper end -->
+    <!-- wrapper end -->
+}
+else
+{
+    if (_snakeModel is not null)
+    {
+        <!-- wrapper -->
+        <div id="wrapper">
+            <!-- content-holder -->
+            <div class="content-holder">
+                <!-- column-image  -->
+                <div class="column-image">
+                    <div class="bg" data-bg="Snakes/@(_snakeModel.Id).jpg"></div>
+                    <div class="overlay"></div>
+                    <div class="column-title">
+                        <h2>@_snakeModel.MMName</h2>
+                        <h3>@_snakeModel.EngName</h3>
+                    </div>
+                    <div class="ci_dec"><span></span></div>
+                </div>
+                <!-- column-image end  -->
+                <!-- column-wrapper -->
+                <div class="column-wrapper">
+                    <!--section  -->
+                    <section id="sec1">
+                        <div class="container small-container">
+                            <div class="section-title fl-wrap">
+                                <h3>@_snakeModel.MMName</h3>
+                                <h4>@_snakeModel.EngName</h4>
+                                <div class="section-number">01.</div>
+                            </div>
+                            <div class="column-wrapper_item fl-wrap">
+                                <div class="column-wrapper_text fl-wrap">
+                                    <p>
+                                        @_snakeModel.Detail
+                                    </p>
+                                    <a href="javascript:void(0);" @onclick="Back" class="btn fl-btn">BACK</a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!--section end  -->
+                    
+                    <div class="order-wrap">
+                        <div class="container small-container">
+                            <h4>Ready To order Your Project?</h4>
+                        </div>
+                        <a href="contacts.html" class="order_btn">Get In Touch</a>
+                    </div>
+                </div>
+                <!-- column-wrapper -->
+                <!-- fixed-bottom-container -->
+                <div class="fixed-bottom-container">
+                    <div class="scroll-down-wrap">
+                        <div class="mousey">
+                            <div class="scroller"></div>
+                        </div>
+                    </div>
+                    <div class="page-scroll-nav">
+                        <nav class="scroll-init">
+                            <ul>
+                                <li><a href="#sec1" class="act-sec"></a><span>About</span></li>
+                                <li><a href="#sec2"></a><span>Services</span></li>
+                                <li><a href="#sec3"></a><span>Skills</span></li>
+                                <li><a href="#sec4"></a><span>Clients</span></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="progress-bar-wrap">
+                        <div class="progress-bar color-bg"></div>
+                    </div>
+                </div>
+                <!-- fixed-bottom-container end-->
+            </div>
+            <!-- content-holder end -->
+        </div>
+        <!-- wrapper end -->
+    }
+}

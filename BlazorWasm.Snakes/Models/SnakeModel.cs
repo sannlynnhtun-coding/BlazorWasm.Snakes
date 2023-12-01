@@ -9,5 +9,9 @@
         public string IsPoison { get; set; }
         public string IsDanger { get; set; }
     }
-
+    public enum EnumSnakeDetail
+    {
+        Enable,
+        Disable
+    }
 }

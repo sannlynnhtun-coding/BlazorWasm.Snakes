@@ -5,7 +5,7 @@ namespace BlazorWasm.Snakes.Services
 {
     public class SnakeService
     {
-        public List<SnakeModel> GetSnakes()
+        public  List<SnakeModel> GetSnakes()
         {
             return JsonConvert.DeserializeObject<List<SnakeModel>>(snakeJsonString)!;
         }
