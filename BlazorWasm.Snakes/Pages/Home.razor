@@ -3,13 +3,12 @@
 @inject IJSRuntime JsRuntime
 @inject SnakeService _snakeService
 
-
-@if (_enumSnakeDetail == EnumSnakeDetail.Disable)
-{
-    <!-- wrapper -->
-    <div id="wrapper">
-        <!-- content-holder -->
-        <div class="content-holder">
+<!-- wrapper -->
+<div id="wrapper">
+    <!-- content-holder -->
+    <div class="content-holder">
+        @if (_enumSnakeDetail == EnumSnakeDetail.Disable)
+        {
             <!-- horizontal-grid-wrap -->
             <div class="horizontal-grid-wrap scale_anim">
                 <div class="horizontal-portfolio_wrap two-ver-columns lightgallery gi_left_al" id="portfolio_horizontal_container">
@@ -77,75 +76,75 @@
                             i += count;
 
                             <!-- gallery-item-->
-                            <div class="gallery-item nature">
+                            <div class="gallery-item nature" @onclick="()=>OnClick(item1)">
                                 <div class="grid-item-holder  hov_zoom">
-                                    <img src="Snakes/@(++picCount).jpg" alt="">
+                                    <img src="@ImagePath(item1.Id)" alt="">
                                     <div class="grid-item-info">
                                         <h3><a href="portfolio-single.html">@item1.MMName</a></h3>
                                         <p>@item1.EngName</p>
                                     </div>
                                     <div class="pr_num"></div>
-                                    <a class=" grid-media-zoom" href="javascript:void(0);" @onclick="()=>Onclick(item1)">
+                                    <a class=" grid-media-zoom" href="javascript:void(0);" @onclick="()=>OnClick(item1)">
                                         <i class=" far fa-search"></i>
                                     </a>
                                 </div>
                             </div>
                             <!-- gallery-item end-->
                             <!-- gallery-item-->
-                            <div class="gallery-item models couples">
+                            <div class="gallery-item models couples" @onclick="()=>OnClick(item2)">
                                 <div class="grid-item-holder  hov_zoom">
-                                    <img src="Snakes/@(++picCount).jpg" alt="">
+                                    <img src="@ImagePath(item2.Id)" alt="">
                                     <div class="grid-item-info">
                                         <h3><a href="portfolio-single.html">@item2.MMName</a></h3>
                                         <p>@item2.EngName</p>
                                     </div>
                                     <div class="pr_num"></div>
-                                    <a class=" grid-media-zoom" href="javascript:void(0);" @onclick="()=>Onclick(item2)">
+                                    <a class=" grid-media-zoom" href="javascript:void(0);" @onclick="()=>OnClick(item2)">
                                         <i class=" far fa-search"></i>
                                     </a>
                                 </div>
                             </div>
                             <!-- gallery-item end-->
                             <!-- gallery-item-->
-                            <div class="gallery-item portfolio_item_second models">
+                            <div class="gallery-item portfolio_item_second models" @onclick="()=>OnClick(item3)">
                                 <div class="grid-item-holder  hov_zoom">
-                                    <img src="Snakes/@(++picCount).jpg" alt="">
+                                    <img src="@ImagePath(item3.Id)" alt="">
                                     <div class="grid-item-info">
                                         <h3><a href="portfolio-single.html">@item3.MMName</a></h3>
                                         <p>@item3.EngName</p>
                                     </div>
                                     <div class="pr_num"></div>
-                                    <a class=" grid-media-zoom" href="javascript:void(0);" @onclick="()=>Onclick(item3)">
+                                    <a class=" grid-media-zoom" href="javascript:void(0);" @onclick="()=>OnClick(item3)">
                                         <i class=" far fa-search"></i>
                                     </a>
                                 </div>
                             </div>
                             <!-- gallery-item end-->
                             <!-- gallery-item-->
-                            <div class="gallery-item nature">
+                            <div class="gallery-item nature" @onclick="()=>OnClick(item4)">
                                 <div class="grid-item-holder  hov_zoom">
-                                    <img src="Snakes/@(++picCount).jpg" alt="">
+                                    <img src="@ImagePath(item4.Id)" alt="">
                                     <div class="grid-item-info">
                                         <h3><a href="portfolio-single.html">@item4.MMName</a></h3>
                                         <p>@item4.EngName</p>
                                     </div>
                                     <div class="pr_num"></div>
-                                    <a class=" grid-media-zoom" href="javascript:void(0);" @onclick="()=>Onclick(item4)">
+                                    <a class=" grid-media-zoom" href="javascript:void(0);" @onclick="()=>OnClick(item4)">
                                         <i class=" far fa-search"></i>
                                     </a>
                                 </div>
                             </div>
                             <!-- gallery-item end-->
                             <!-- gallery-item-->
-                            <div class="gallery-item couples">
+                            <div class="gallery-item couples" @onclick="()=>OnClick(item5)">
                                 <div class="grid-item-holder  hov_zoom">
-                                    <img src="Snakes/@(++picCount).jpg" alt="">
+                                    <img src="@ImagePath(item5.Id)" alt="">
                                     <div class="grid-item-info">
                                         <h3><a href="portfolio-single.html">@item5.MMName</a></h3>
                                         <p>@item5.EngName</p>
                                     </div>
                                     <div class="pr_num"></div>
-                                    <a class=" grid-media-zoom" href="javascript:void(0);" @onclick="()=>Onclick(item5)">
+                                    <a class=" grid-media-zoom" href="javascript:void(0);" @onclick="()=>OnClick(item5)">
                                         <i class=" far fa-search"></i>
                                     </a>
                                 </div>
@@ -153,28 +152,10 @@
                             <!-- gallery-item end-->
                         }
                     }
-
                     <!-- portfolio end -->
                 </div>
             </div>
             <!-- portfolio end -->
-            <!-- fixed-bottom-container -->
-            <div class="fixed-bottom-container f_bc_vis">
-                <div class="scroll-down-wrap">
-                    <div class="mousey">
-                        <div class="scroller"></div>
-                    </div>
-                </div>
-                <div class="filter-btn hid-filter">
-                    <div class="filter-btn_container"></div>
-                    <span class="filt-title">Filters</span>
-                </div>
-                <div class="folio-counter">
-                    <div class="num-album"></div>
-                    <div class=" all-album"></div>
-                </div>
-            </div>
-            <!-- fixed-bottom-container  end-->
             <!-- gallery-filters-wrap-->
             <div class="gallery-filters-wrap">
                 <div class="gallery-filters">
@@ -187,28 +168,23 @@
                 <div class="gallery-filters-overlay"></div>
             </div>
             <!--gallery-filters-wrap end-->
-        </div>
-        <!-- content-holder end -->
-    </div>
-    <!-- wrapper end -->
-}
-else
-{
-    if (_snakeModel is not null)
-    {
-        <!-- wrapper -->
-        <div id="wrapper">
-            <!-- content-holder -->
-            <div class="content-holder">
+        }
+        else
+        {
+            if (_snakeModel is not null)
+            {
                 <!-- column-image  -->
                 <div class="column-image">
-                    <div class="bg" data-bg="Snakes/@(_snakeModel.Id).jpg"></div>
+                    <div class="bg" data-bg="@ImagePath(_snakeModel.Id)"></div>
                     <div class="overlay"></div>
                     <div class="column-title">
                         <h2>@_snakeModel.MMName</h2>
                         <h3>@_snakeModel.EngName</h3>
                     </div>
-                    <div class="ci_dec"><span></span></div>
+                    <div class="ci_dec">
+                        <span>
+                        </span>
+                    </div>
                 </div>
                 <!-- column-image end  -->
                 <!-- column-wrapper -->
@@ -219,25 +195,25 @@ else
                             <div class="section-title fl-wrap">
                                 <h3>@_snakeModel.MMName</h3>
                                 <h4>@_snakeModel.EngName</h4>
-                                <div class="section-number">01.</div>
+                                <div class="section-number">@(_snakeModel.Id.ToString().PadLeft(2, '0')).</div>
+                                <a href="javascript:void(0);" @onclick="Back" style="margin-top: 30px;" class="btn-small">BACK</a>
                             </div>
                             <div class="column-wrapper_item fl-wrap">
                                 <div class="column-wrapper_text fl-wrap">
                                     <p>
                                         @_snakeModel.Detail
                                     </p>
-                                    <a href="javascript:void(0);" @onclick="Back" class="btn fl-btn">BACK</a>
                                 </div>
                             </div>
                         </div>
                     </section>
                     <!--section end  -->
-                    
+
                     <div class="order-wrap">
                         <div class="container small-container">
-                            <h4>Ready To order Your Project?</h4>
+                            <h4>GitHub Repository</h4>
                         </div>
-                        <a href="contacts.html" class="order_btn">Get In Touch</a>
+                        <a href="https://github.com/sannlynnhtun-coding/BlazorWasm.Snakes" target="_blank" class="order_btn">Open</a>
                     </div>
                 </div>
                 <!-- column-wrapper -->
@@ -263,9 +239,9 @@ else
                     </div>
                 </div>
                 <!-- fixed-bottom-container end-->
-            </div>
-            <!-- content-holder end -->
-        </div>
-        <!-- wrapper end -->
-    }
-}
+            }
+        }
+    </div>
+    <!-- content-holder end -->
+</div>
+<!-- wrapper end -->

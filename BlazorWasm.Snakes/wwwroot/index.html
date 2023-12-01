@@ -12,7 +12,7 @@
 
     <!--<link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />-->
     <link rel="stylesheet" href="css/app.css" />
-    <link rel="icon" type="image/png" href="snake_logo.png" />
+    <link rel="icon" type="image/png" href="favicon.png" />
     <link href="BlazorWasm.Snakes.styles.css" rel="stylesheet" />
 
     <link type="text/css" rel="stylesheet" href="theme/css/plugins.css">
@@ -24,8 +24,8 @@
 
 
     <link href="manifest.webmanifest" rel="manifest" />
-    <link rel="apple-touch-icon" sizes="512x512" href="snake_logo.png" />
-    <link rel="apple-touch-icon" sizes="192x192" href="snake_logo.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="favicon.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="favicon.png" />
 </head>
 
 <body>
@@ -45,9 +45,11 @@
     <script src="_framework/blazor.webassembly.js"></script>
     <script>navigator.serviceWorker.register('service-worker.js');</script>
     <script src="theme/js/jquery.min.js"></script>
-    <script src="theme/js/plugins.js"></script>
+    <script data-name="plugin-script" src="theme/js/plugins.js"></script>
     <script>
         window.loadJs = function (sourceUrl) {
+            $('[data-name="plugin-script"]').remove();
+
             if (sourceUrl.Length == 0) {
                 console.error("Invalid source URL");
                 return;
@@ -56,6 +58,7 @@
             var tag = document.createElement('script');
             tag.src = sourceUrl;
             tag.type = "text/javascript";
+            tag.setAttribute("data-name", "plugin-script");
 
             tag.onload = function () {
                 console.log("Script loaded successfully");

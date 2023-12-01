@@ -26,3 +26,26 @@
     .blazor-error-boundary::after {
         content: "An error has occurred."
     }
+
+
+.btn-small {
+    display: table;
+    padding: 5px 10px;
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 10px;
+    background: #fff;
+    color: #000;
+    border-radius: 30px;
+    transition: all .5s ease;
+}
+
+.section-title h3 {
+    padding-bottom: 0;
+}
+
+section {
+    padding: 45px 0;
+}

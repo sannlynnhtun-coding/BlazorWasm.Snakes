@@ -19,7 +19,8 @@ public partial class Home
             StateHasChanged();
         }
     }
-    private async Task Onclick(SnakeModel item)
+
+    private async Task OnClick(SnakeModel item)
     {
         _enumSnakeDetail = EnumSnakeDetail.Enable;
         _snakeModel = item;
@@ -27,18 +28,24 @@ public partial class Home
         StateHasChanged();
     }
 
-    private void Back()
+    private async Task Back()
     {
         _enumSnakeDetail = EnumSnakeDetail.Disable;
         _snakeModel = null;
         _snakes = _snakeService.GetSnakes();
         StateHasChanged();
+        await LoadJavaScript();
     }
 
     private async Task LoadJavaScript()
     {
         await Task.Delay(500);
         await JsRuntime.InvokeVoidAsync("loadJs", "theme/js/scripts.js");
+    }
+
+    private string ImagePath(int id)
+    {
+        return $"snakes/{id}.jpg";
     }
 }
 
