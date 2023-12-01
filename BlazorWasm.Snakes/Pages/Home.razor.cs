@@ -47,5 +47,18 @@ public partial class Home
     {
         return $"snakes/{id}.jpg";
     }
+
+    private static string Map(string input)
+    {
+        switch (input.ToLower())
+        {
+            case "yes":
+                return "ရှိ";
+            case "no":
+                return "မရှိ";
+            default:
+                return "Invalid input";
+        }
+    }
 }
 
