@@ -74,92 +74,99 @@
                             }
 
                             i += count;
-
-                            <!-- gallery-item-->
+                            @if(item1.EngName is not null)
+                            {
+                                <!-- gallery-item-->
                             <div class="gallery-item nature" @onclick="() => OnClick(item1)">
                                 <div class="grid-item-holder  hov_zoom">
                                     <img src="@ImagePath(item1.Id)" alt="">
                                     <div class="grid-item-info">
-                                        <h3>
-                                            <a href="portfolio-single.html">@item1.MMName</a>
-                                        </h3>
-                                        <p>@item1.EngName</p>
+                                       @*  <h3>
+                                            <a href="javascript:void(0);">@item1.MMName</a>
+                                        </h3> *@
+                                        <p>@item1.MMName</p>
                                     </div>
-                                    <div class="pr_num"></div>
                                     <a class=" grid-media-zoom" href="javascript:void(0);" @onclick="() => OnClick(item1)">
                                         <i class=" far fa-search"></i>
                                     </a>
                                 </div>
                             </div>
                             <!-- gallery-item end-->
-                            <!-- gallery-item-->
+                            }
+                            @if(item2.EngName is not null)
+                            {
+                                <!-- gallery-item-->
                             <div class="gallery-item models couples" @onclick="() => OnClick(item2)">
                                 <div class="grid-item-holder  hov_zoom">
                                     <img src="@ImagePath(item2.Id)" alt="">
                                     <div class="grid-item-info">
-                                        <h3>
-                                            <a href="portfolio-single.html">@item2.MMName</a>
-                                        </h3>
-                                        <p>@item2.EngName</p>
+                                       @*  <h3>
+                                            <a href="javascript:void(0);">@item1.MMName</a>
+                                        </h3> *@
+                                        <p>@item2.MMName</p>
                                     </div>
-                                    <div class="pr_num"></div>
                                     <a class=" grid-media-zoom" href="javascript:void(0);" @onclick="() => OnClick(item2)">
                                         <i class=" far fa-search"></i>
                                     </a>
                                 </div>
                             </div>
                             <!-- gallery-item end-->
-                            <!-- gallery-item-->
+                            }
+                            @if(item3.EngName is not null){
+                                 <!-- gallery-item-->
                             <div class="gallery-item portfolio_item_second models" @onclick="() => OnClick(item3)">
                                 <div class="grid-item-holder  hov_zoom">
                                     <img src="@ImagePath(item3.Id)" alt="">
                                     <div class="grid-item-info">
-                                        <h3>
-                                            <a href="portfolio-single.html">@item3.MMName</a>
-                                        </h3>
-                                        <p>@item3.EngName</p>
+                                       @*  <h3>
+                                            <a href="javascript:void(0);">@item1.MMName</a>
+                                        </h3> *@
+                                        <p>@item3.MMName</p>
                                     </div>
-                                    <div class="pr_num"></div>
                                     <a class=" grid-media-zoom" href="javascript:void(0);" @onclick="() => OnClick(item3)">
                                         <i class=" far fa-search"></i>
                                     </a>
                                 </div>
                             </div>
                             <!-- gallery-item end-->
-                            <!-- gallery-item-->
+                            }
+                            @if (item4.EngName is not null)
+                            {
+                                <!-- gallery-item-->
                             <div class="gallery-item nature" @onclick="() => OnClick(item4)">
                                 <div class="grid-item-holder  hov_zoom">
                                     <img src="@ImagePath(item4.Id)" alt="">
                                     <div class="grid-item-info">
-                                        <h3>
-                                            <a href="portfolio-single.html">@item4.MMName</a>
-                                        </h3>
-                                        <p>@item4.EngName</p>
+                                        @*  <h3>
+                                            <a href="javascript:void(0);">@item1.MMName</a>
+                                        </h3> *@
+                                        <p>@item4.MMName</p>
                                     </div>
-                                    <div class="pr_num"></div>
                                     <a class=" grid-media-zoom" href="javascript:void(0);" @onclick="() => OnClick(item4)">
                                         <i class=" far fa-search"></i>
                                     </a>
                                 </div>
                             </div>
                             <!-- gallery-item end-->
-                            <!-- gallery-item-->
+                            }
+                            @if(item5.EngName is not null){
+                                <!-- gallery-item-->
                             <div class="gallery-item couples" @onclick="() => OnClick(item5)">
                                 <div class="grid-item-holder  hov_zoom">
                                     <img src="@ImagePath(item5.Id)" alt="">
                                     <div class="grid-item-info">
-                                        <h3>
-                                            <a href="portfolio-single.html">@item5.MMName</a>
-                                        </h3>
-                                        <p>@item5.EngName</p>
+                                        @*  <h3>
+                                            <a href="javascript:void(0);">@item1.MMName</a>
+                                        </h3> *@
+                                        <p>@item5.MMName</p>
                                     </div>
-                                    <div class="pr_num"></div>
                                     <a class=" grid-media-zoom" href="javascript:void(0);" @onclick="() => OnClick(item5)">
                                         <i class=" far fa-search"></i>
                                     </a>
                                 </div>
                             </div>
                             <!-- gallery-item end-->
+                            }
                         }
                     }
                     <!-- portfolio end -->
@@ -214,7 +221,7 @@
                             <div class="column-wrapper_item fl-wrap">
                                 <div class="column-wrapper_text fl-wrap">
                                     <p>
-                                        @_snakeModel.Detail
+                                        @((MarkupString)_snakeModel.Detail);
                                     </p>
                                 </div>
                             </div>

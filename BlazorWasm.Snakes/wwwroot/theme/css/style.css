@@ -2142,9 +2142,9 @@ blockquote p {
 .gi_left_al .grid-item-info {
 	top: auto;
 	bottom: 40px;
-	text-align: left;
+	/*text-align: left;*/
 	transform: translateY(0%);
-	padding: 0 30px;
+	/*padding: 0 30px;*/
 }
 .grid-item-holder:hover .grid-item-info {
 	opacity: 1;

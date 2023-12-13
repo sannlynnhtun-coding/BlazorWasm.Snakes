@@ -24,6 +24,9 @@ public partial class Home
     {
         _enumSnakeDetail = EnumSnakeDetail.Enable;
         _snakeModel = item;
+        _snakeModel.Detail = item.Detail.Contains("\n") ?
+            item.Detail.Replace("\n","<br>") : item.Detail;
+        Console.WriteLine(_snakeModel.Detail);
         await LoadJavaScript();
         StateHasChanged();
     }
