@@ -1,0 +1,12 @@
+{
+  "framework": null,
+  "installCommand": "",
+  "buildCommand": "curl -fsSL https://dot.net/v1/dotnet-install.sh -o /tmp/dotnet-install.sh && bash /tmp/dotnet-install.sh --channel 10.0 --install-dir /tmp/dotnet --no-path && /tmp/dotnet/dotnet publish BlazorWasm.Snakes/BlazorWasm.Snakes.csproj -c Release -o artifacts/vercel -p:WasmBuildNative=false",
+  "outputDirectory": "artifacts/vercel/wwwroot",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
